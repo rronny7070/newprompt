@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프롬프트 대신 쓰는그거</title>
+    <style>
+        #title{
+            background-color: lightblue;
+            position:fixed;
+            left:30%;
+            top:30%;
+            padding:80px;
+            font-size:20px;
+            border-radius: 15px;;
+            padding-top: 30px;;
+            color:white;
+            font-weight: bold;
+            display: none;
+        }
+        #txt{
+            background-color: white;
+            position:fixed;
+            left:36%;
+            top:45%;
+            border-radius: 15px;;
+            border:none;
+            padding: 14px;;
+            display: none;
+        }
+        #edit{
+            background-color: white;
+            position:fixed;
+            left:53%;
+            top:50%;
+            border-radius: 5px;;
+            border:none;
+            font-size:5px;
+            display: none;
+        }
+        p{
+            font-weight: bold;
+            font-size:60px;
+            position: relative;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id = 'title'>내용을 입력해주세요</h1>
+    <input type = 'text' placeholder="내용을 입력해주세요" id = 'txt'>
+    <input type = 'button' value="확인" id = 'edit' onclick="edi()"> 
+    <input type = 'button' value="Edit" id = 'btn' onclick="edit()">
+    <p>텍스트 박스</p>
+    <script>
+        let a = 0;
+        function edit() {
+            if(a == 0){
+                a = 1;
+                document.querySelector('#title').style.display = 'block'
+                document.querySelector('#txt').style.display = 'block'
+                document.querySelector('#edit').style.display = 'block'
+            }
+            else{
+                a = 0;
+                document.querySelector('#title').style.display = 'none'
+                document.querySelector('#txt').style.display = 'none'
+                document.querySelector('#edit').style.display = 'none'
+            }
+        }
+        function edi() {
+            if(a == 0){
+                a = 1;
+                document.querySelector('#title').style.display = 'block'
+                document.querySelector('#txt').style.display = 'block'
+                document.querySelector('#edit').style.display = 'block'
+            }
+            else{
+                a = 0;
+                let s = document.querySelector('#txt').value;
+                document.querySelector('p').innerHTML = s
+                document.querySelector('#title').style.display = 'none'
+                document.querySelector('#txt').style.display = 'none'
+                document.querySelector('#edit').style.display = 'none'
+            }
+        }
+    </script>
+</body>
+</html>
